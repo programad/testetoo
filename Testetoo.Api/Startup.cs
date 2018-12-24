@@ -6,7 +6,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Testetoo.Api.Extensions;
 using Testetoo.Infra.CrossCutting.IoC;
-using TesteToo.Infra.Data.Context;
+using Testetoo.Infra.Data.Context;
 
 namespace Testetoo.Api
 {

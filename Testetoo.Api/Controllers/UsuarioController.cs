@@ -49,7 +49,7 @@ namespace Testetoo.Api.Controllers
 
         // POST api/usuario
         [HttpPost]
-        public async Task<IActionResult> Post([FromBody] UsuarioViewModel vm)
+        public IActionResult Post([FromBody] UsuarioViewModel vm)
         {
             if (!ModelState.IsValid)
             {
@@ -57,13 +57,13 @@ namespace Testetoo.Api.Controllers
             }
 
             var operation = _usuarioAppService.Add(vm);
-            
+
             return Ok(operation);
         }
 
         // PUT api/usuario/5
         [HttpPut("{id:guid}")]
-        public async Task<IActionResult> Put(Guid id, [FromBody] UsuarioViewModel vm)
+        public IActionResult Put(Guid id, [FromBody] UsuarioViewModel vm)
         {
             if (!ModelState.IsValid)
             {
@@ -75,13 +75,13 @@ namespace Testetoo.Api.Controllers
             }
 
             var operation = _usuarioAppService.Update(vm);
-            
+
             return Ok(operation);
         }
 
         // DELETE api/usuario/5
         [HttpDelete("{id:guid}")]
-        public async Task<IActionResult> Delete(Guid id)
+        public IActionResult Delete(Guid id)
         {
             if (!ModelState.IsValid)
             {
@@ -89,7 +89,7 @@ namespace Testetoo.Api.Controllers
             }
 
             var operation = _usuarioAppService.Remove(id);
-            
+
             return Ok(operation);
         }
     }

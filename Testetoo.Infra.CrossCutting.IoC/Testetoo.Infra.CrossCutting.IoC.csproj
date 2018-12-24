@@ -5,9 +5,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\testetoo.application\Testetoo.Application.csproj" />
+    <ProjectReference Include="..\Testetoo.Application\Testetoo.Application.csproj" />
     <ProjectReference Include="..\Testetoo.Domain\Testetoo.Domain.csproj" />
-    <ProjectReference Include="..\TesteToo.Infra.Data\TesteToo.Infra.Data.csproj" />
+    <ProjectReference Include="..\TesteToo.Infra.Data\Testetoo.Infra.Data.csproj" />
   </ItemGroup>
 
   <ItemGroup>

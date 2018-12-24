@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 using Testetoo.Domain.Interfaces;
-using TesteToo.Infra.Data.Context;
+using Testetoo.Infra.Data.Context;
 
-namespace TesteToo.Infra.Data.UoW
+namespace Testetoo.Infra.Data.UoW
 {
     public class UnitOfWork : IUnitOfWork
     {

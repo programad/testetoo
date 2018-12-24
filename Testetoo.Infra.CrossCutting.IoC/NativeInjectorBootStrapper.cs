@@ -4,9 +4,9 @@ using Microsoft.Extensions.DependencyInjection;
 using Testetoo.Application.Interfaces;
 using Testetoo.Application.Services;
 using Testetoo.Domain.Interfaces;
-using TesteToo.Infra.Data.Context;
-using TesteToo.Infra.Data.Repositories;
-using TesteToo.Infra.Data.UoW;
+using Testetoo.Infra.Data.Context;
+using Testetoo.Infra.Data.Repositories;
+using Testetoo.Infra.Data.UoW;
 
 namespace Testetoo.Infra.CrossCutting.IoC
 {

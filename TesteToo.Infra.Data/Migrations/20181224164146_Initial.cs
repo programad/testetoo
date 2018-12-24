@@ -1,7 +1,7 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace TesteToo.Infra.Data.Migrations
+namespace Testetoo.Infra.Data.Migrations
 {
     public partial class Initial : Migration
     {

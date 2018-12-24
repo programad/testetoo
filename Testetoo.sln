@@ -23,7 +23,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4.1-Data", "4.1-Data", "{9B
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4.2-CrossCutting", "4.2-CrossCutting", "{440E3C55-3131-426D-BAE0-D00D88DBA5EA}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TesteToo.Infra.Data", "TesteToo.Infra.Data\TesteToo.Infra.Data.csproj", "{01974B15-90BD-44ED-AE35-748AD0B3C189}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Testetoo.Infra.Data", "TesteToo.Infra.Data\Testetoo.Infra.Data.csproj", "{01974B15-90BD-44ED-AE35-748AD0B3C189}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Testetoo.Infra.CrossCutting.IoC", "Testetoo.Infra.CrossCutting.IoC\Testetoo.Infra.CrossCutting.IoC.csproj", "{51DD2D8F-2CDA-450D-A6E6-6C56080B6C38}"
 EndProject

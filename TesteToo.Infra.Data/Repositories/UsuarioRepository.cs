@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Text;
 using Testetoo.Domain.Interfaces;
 using Testetoo.Domain.Models;
-using TesteToo.Infra.Data.Context;
+using Testetoo.Infra.Data.Context;
 
-namespace TesteToo.Infra.Data.Repositories
+namespace Testetoo.Infra.Data.Repositories
 {
     public class UsuarioRepository : Repository<Usuario>, IUsuarioRepository
     {

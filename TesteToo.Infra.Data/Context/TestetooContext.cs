@@ -5,9 +5,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Text;
 using Testetoo.Domain.Models;
-using TesteToo.Infra.Data.Configurations;
+using Testetoo.Infra.Data.Configurations;
 
-namespace TesteToo.Infra.Data.Context
+namespace Testetoo.Infra.Data.Context
 {
     public class TestetooContext : DbContext
     {
@@ -39,7 +39,7 @@ namespace TesteToo.Infra.Data.Context
 
             var configuration = builder.Build();
 
-            optionsBuilder.UseSqlServer(configuration.GetConnectionString("DefaultConnection"), b => b.MigrationsAssembly("TesteToo.Infra.Data"));
+            optionsBuilder.UseSqlServer(configuration.GetConnectionString("DefaultConnection"), b => b.MigrationsAssembly("Testetoo.Infra.Data"));
         }
     }
 }

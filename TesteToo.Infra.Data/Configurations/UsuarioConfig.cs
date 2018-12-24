@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using Testetoo.Domain.Models;
 
-namespace TesteToo.Infra.Data.Configurations
+namespace Testetoo.Infra.Data.Configurations
 {
     public class UsuarioConfig : IEntityTypeConfiguration<Usuario>
     {

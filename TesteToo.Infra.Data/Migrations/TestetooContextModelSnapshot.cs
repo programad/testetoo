@@ -4,9 +4,9 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using TesteToo.Infra.Data.Context;
+using Testetoo.Infra.Data.Context;
 
-namespace TesteToo.Infra.Data.Migrations
+namespace Testetoo.Infra.Data.Migrations
 {
     [DbContext(typeof(TestetooContext))]
     partial class TestetooContextModelSnapshot : ModelSnapshot

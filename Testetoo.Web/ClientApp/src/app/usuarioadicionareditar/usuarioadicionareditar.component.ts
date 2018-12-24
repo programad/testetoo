@@ -27,7 +27,6 @@ export class UsuarioAdicionarEditarComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    console.log(this.usuarioId);
     if (this.usuarioId !== undefined && this.usuarioId !== '00000000-0000-0000-0000-000000000000') {
       this.titulo = "Editar";
       this._usuarioService.get(this.usuarioId)
@@ -37,7 +36,6 @@ export class UsuarioAdicionarEditarComponent implements OnInit {
   }
 
   salvarUsuario() {
-    console.log(this.titulo);
     if (!this.usuarioForm.valid) {
       return;
     }
