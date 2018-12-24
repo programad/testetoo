@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Serialization;
 using Testetoo.Application.Interfaces;
 using Testetoo.Application.ViewModels.Usuario;
 
@@ -17,6 +19,12 @@ namespace Testetoo.Api.Controllers
         public UsuarioController(IUsuarioAppService usuarioAppService)
         {
             _usuarioAppService = usuarioAppService;
+
+            JsonConvert.DefaultSettings = () => new JsonSerializerSettings()
+            {
+                DateFormatString = "yyyy-MM-dd",
+                ContractResolver = new CamelCasePropertyNamesContractResolver()
+            };
         }
 
         // GET api/usuario
@@ -34,7 +42,9 @@ namespace Testetoo.Api.Controllers
         {
             var model = _usuarioAppService.GetById(id);
 
-            return new JsonResult(model);
+            var json = JsonConvert.SerializeObject(model);
+
+            return Content(json, "application/json");
         }
 
         // POST api/usuario

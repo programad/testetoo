@@ -1,7 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Text;
 
 namespace Testetoo.Application.ViewModels.Usuario
 {
@@ -23,7 +21,7 @@ namespace Testetoo.Application.ViewModels.Usuario
         public string UserName { get; set; }
 
         [Required]
-        [RegularExpression(@"^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{5,}$")]
+        [RegularExpression(@"^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{5,}$", ErrorMessage = "A senha deve conter ao menos 5 dígitos e ao menos um número e uma letra")]
         public string Senha { get; set; }
 
         [Required] // TODO validar data não pode ser futuro

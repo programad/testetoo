@@ -1,0 +1,30 @@
+<h1>Usuários do sistema</h1>
+
+<p>Listando usuários do sistema</p>
+
+<p *ngIf="!usuarios"><em>Loading...</em></p>
+
+<div>
+  <a [routerLink]="['/usuario/adicionar']" class="btn btn-default">Criar Usuario</a>
+</div>
+<table class='table' *ngIf="usuarios">
+  <thead>
+    <tr>
+      <th>Nome</th>
+      <th>UserName</th>
+      <th>DataNascimento</th>
+      <th>&nbsp;</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let usuario of usuarios">
+      <td>{{ usuario.nome }}</td>
+      <td>{{ usuario.userName }}</td>
+      <td>{{ usuario.dataNascimento | date: 'dd/MM/yyyy'}}</td>
+      <td>
+        <a [routerLink]="['/usuario/editar/', usuario.id]" class="btn btn-default">Editar</a>
+        <a [routerLink]="" (click)="excluir(usuario.id)" class="btn btn-default">Excluir</a>
+      </td>
+    </tr>
+  </tbody>
+</table>
