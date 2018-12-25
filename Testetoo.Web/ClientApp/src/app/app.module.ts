@@ -8,10 +8,11 @@ import { AppComponent } from './app.component';
 import { NavMenuComponent } from './nav-menu/nav-menu.component';
 import { HomeComponent } from './home/home.component';
 import { UsuarioComponent } from './usuario/usuario.component';
-import { UsuarioService } from './services/usuarioservice.service';
+import { UsuarioService } from './services/usuario.service';
 import { UsuarioAdicionarEditarComponent } from './usuarioadicionareditar/usuarioadicionareditar.component';
 import { UploadComponent } from './upload/upload.component';
-import { UploadService } from './services/upload.service';
+import { ArquivoService } from './services/arquivo.service';
+import { ArquivoComponent } from './arquivo/arquivo.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { UploadService } from './services/upload.service';
     HomeComponent,
     UsuarioComponent,
     UsuarioAdicionarEditarComponent,
-    UploadComponent
+    UploadComponent,
+    ArquivoComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -33,10 +35,12 @@ import { UploadService } from './services/upload.service';
       { path: 'usuario/adicionar', component: UsuarioAdicionarEditarComponent },
       { path: 'usuario/editar/:id', component: UsuarioAdicionarEditarComponent },
       { path: 'usuario/excluir/:id', component: UsuarioComponent },
-      { path: 'upload', component: UploadComponent },
+      { path: 'arquivo/upload', component: UploadComponent },
+      { path: 'arquivo', component: ArquivoComponent },
+      { path: 'arquivo/:id', component: ArquivoComponent },
     ])
   ],
-  providers: [UsuarioService, UploadService],
+  providers: [UsuarioService, ArquivoService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,6 +1,7 @@
 import { Injectable, Inject } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
-import { UsuarioViewModel, OperationResultVo } from '../models/usuario.model';
+import { OperationResultVo } from '../models/base';
+import { UsuarioViewModel } from '../models/usuario.model';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
@@ -20,7 +21,7 @@ export class UsuarioService {
   }
 
   public get(id) {
-    return this.http.get<OperationResultVo>(this.apiBaseUrl + 'api/usuario/' + id)
+    return this.http.get<OperationResultVo<UsuarioViewModel>>(this.apiBaseUrl + 'api/usuario/' + id)
       .catch(this.errorHandler);
   }
 

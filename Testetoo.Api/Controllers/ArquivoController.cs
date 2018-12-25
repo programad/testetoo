@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Serialization;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -20,6 +21,11 @@ namespace Testetoo.Api.Controllers
         public ArquivoController(IArquivoAppService arquivoAppService)
         {
             _arquivoAppService = arquivoAppService;
+
+            JsonConvert.DefaultSettings = () => new JsonSerializerSettings()
+            {
+                ContractResolver = new CamelCasePropertyNamesContractResolver()
+            };
         }
 
         // GET api/arquivo
@@ -35,11 +41,9 @@ namespace Testetoo.Api.Controllers
         [HttpGet("{id:guid}")]
         public ActionResult<ArquivoViewModel> Get(Guid id)
         {
-            Domain.ValueObjects.OperationResultVo<ArquivoViewModel> model = _arquivoAppService.GetById(id);
+            OperationResultVo<ArquivoViewModel> model = _arquivoAppService.GetById(id);
 
-            string json = JsonConvert.SerializeObject(model);
-
-            return Content(json, "application/json");
+            return File(model.Value.Bytes, "image/jpeg");
         }
 
         // POST api/arquivo
@@ -57,9 +61,11 @@ namespace Testetoo.Api.Controllers
                         arquivo.CopyTo(ms);
                         byte[] fileBytes = ms.ToArray();
 
-                        ArquivoViewModel vm = new ArquivoViewModel();
-                        vm.Nome = arquivo.FileName;
-                        vm.Bytes = fileBytes;
+                        ArquivoViewModel vm = new ArquivoViewModel
+                        {
+                            Nome = arquivo.FileName,
+                            Bytes = fileBytes
+                        };
 
                         operation = _arquivoAppService.Add(vm);
                     }

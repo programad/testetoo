@@ -12,6 +12,7 @@
     <tr>
       <th>Nome</th>
       <th>UserName</th>
+      <th>Senha</th>
       <th>DataNascimento</th>
       <th>&nbsp;</th>
     </tr>
@@ -20,6 +21,7 @@
     <tr *ngFor="let usuario of usuarios">
       <td>{{ usuario.nome }}</td>
       <td>{{ usuario.userName }}</td>
+      <td>{{ usuario.senha }}</td>
       <td>{{ usuario.dataNascimento | date: 'dd/MM/yyyy'}}</td>
       <td>
         <a [routerLink]="['/usuario/editar/', usuario.id]" class="btn btn-default">Editar</a>

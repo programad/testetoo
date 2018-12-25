@@ -1,0 +1,25 @@
+<h1>Arquivos no servidor</h1>
+
+<p>Listando arquivos no servidor</p>
+
+<p *ngIf="!arquivos"><em>Loading...</em></p>
+
+<div>
+  <a [routerLink]="['/arquivo/upload']" class="btn btn-default">Enviar arquivo</a>
+</div>
+<table class='table' *ngIf="arquivos">
+  <thead>
+    <tr>
+      <th>Nome</th>
+      <th>&nbsp;</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let arquivo of arquivos">
+      <td>{{ arquivo.nome }}</td>
+      <td>
+        <a (click)="downloaFile(arquivo.id, arquivo.nome)" class="btn btn-default">Baixar</a>
+      </td>
+    </tr>
+  </tbody>
+</table>

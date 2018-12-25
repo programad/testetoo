@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { UploadService } from '../services/upload.service';
-import { HttpEventType } from '@angular/common/http';
+import { ArquivoService } from '../services/arquivo.service';
+import { HttpEventType, HttpResponse } from '@angular/common/http';
+import { OperationResultVo } from '../models/usuario.model';
 
 @Component({
   selector: 'app-upload',
@@ -14,7 +15,7 @@ export class UploadComponent implements OnInit {
   public message: string;
 
 
-  constructor(private _uploadService: UploadService) {
+  constructor(private _arquivoService: ArquivoService) {
   }
 
   ngOnInit() {
@@ -28,14 +29,15 @@ export class UploadComponent implements OnInit {
     const uploadData = new FormData();
     uploadData.append('arquivo', this.arquivoSelecionado, this.arquivoSelecionado.name);
 
-    this._uploadService.upload(uploadData).subscribe(
+    this._arquivoService.upload(uploadData).subscribe(
       event => {
         if (event.type === HttpEventType.UploadProgress) {
           this.progress = Math.round(100 * event.loaded / event.total);
         }
         else if (event.type === HttpEventType.Response) {
-          if (event.success === false) {
-            this.message = event.message;
+          var result = event as HttpResponse<OperationResultVo>;
+          if (result.body.success === false) {
+            this.message = result.body.message;
           }
           else {
             this.message = "Arquivo enviado com sucesso!";

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { UsuarioService } from '../services/usuarioservice.service';
+import { UsuarioService } from '../services/usuario.service';
 import { UsuarioViewModel } from '../models/usuario.model';
 
 @Component({
@@ -20,8 +20,8 @@ export class UsuarioComponent {
   }
 
   excluir(id) {
-    var ans = confirm("Você quer mesmo excluir esse usuário?");
-    if (ans) {
+    var sim = confirm("Você quer mesmo excluir esse usuário?");
+    if (sim) {
       this._usuarioService.remove(id).subscribe((data) => {
         this.getUsuarios();
       }, error => console.error(error))

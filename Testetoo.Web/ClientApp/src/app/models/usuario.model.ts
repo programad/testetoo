@@ -4,10 +4,3 @@ export interface UsuarioViewModel {
   dataNascimento: Date;
   senha: string
 }
-
-
-export class OperationResultVo {
-  success: boolean;
-  message: string;
-  value: object;
-}
