@@ -1,7 +1,5 @@
 ﻿using AutoMapper;
-using System;
-using System.Collections.Generic;
-using System.Text;
+using Testetoo.Application.ViewModels.Arquivo;
 using Testetoo.Application.ViewModels.Usuario;
 
 namespace Testetoo.Application.AutoMapper
@@ -11,6 +9,7 @@ namespace Testetoo.Application.AutoMapper
         public ViewModelToDomainMappingProfile()
         {
             CreateMap<UsuarioViewModel, Domain.Models.Usuario>();
+            CreateMap<ArquivoViewModel, Domain.Models.Arquivo>();
         }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using Testetoo.Domain.Core;
 using Testetoo.Domain.Core.Models;
 
@@ -13,5 +14,7 @@ namespace Testetoo.Domain.Models
         public string Senha { get; set; }
 
         public DateTime DataNascimento { get; set; }
+
+        public IEnumerable<Arquivo> Arquivos { get; set; }
     }
 }

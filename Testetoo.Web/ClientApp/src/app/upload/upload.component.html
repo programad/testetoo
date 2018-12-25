@@ -1,0 +1,20 @@
+<h1>Upload de arquivos</h1>
+
+<p>Subindo arquivos para o servidor</p>
+
+<div class="row">
+  <div class="col-lg-12">
+    <input style="display: none"
+           type="file"  accept="image/jpeg, image/png" (change)="onFileChanged($event)"
+           #fileInput>
+    <button (click)="fileInput.click()">Selecionar arquivo</button>
+    <button (click)="onUpload()">Subir!</button>
+  </div>
+</div>
+
+<span style="font-weight:bold;color:green;" *ngIf="progress > 0 && progress < 100">
+  {{progress}}%
+</span>
+<span style="font-weight:bold;color:green;" *ngIf="message">
+  {{message}}
+</span>

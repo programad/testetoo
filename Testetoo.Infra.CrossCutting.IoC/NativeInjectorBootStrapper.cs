@@ -12,13 +12,18 @@ namespace Testetoo.Infra.CrossCutting.IoC
     {
         public static void RegisterServices(IServiceCollection services)
         {
-            // Application
-            services.AddScoped<IUsuarioAppService, UsuarioAppService>();
 
             // Infra - Data
             services.AddScoped<TestetooContext>();
             services.AddScoped<IUnitOfWork, UnitOfWork>();
+
+            // Repositories
             services.AddScoped<IUsuarioRepository, UsuarioRepository>();
+            services.AddScoped<IArquivoRepository, ArquivoRepository>();
+
+            // Application
+            services.AddScoped<IUsuarioAppService, UsuarioAppService>();
+            services.AddScoped<IArquivoAppService, ArquivoAppService>();
         }
     }
 }

@@ -10,6 +10,8 @@ import { HomeComponent } from './home/home.component';
 import { UsuarioComponent } from './usuario/usuario.component';
 import { UsuarioService } from './services/usuarioservice.service';
 import { UsuarioAdicionarEditarComponent } from './usuarioadicionareditar/usuarioadicionareditar.component';
+import { UploadComponent } from './upload/upload.component';
+import { UploadService } from './services/upload.service';
 
 @NgModule({
   declarations: [
@@ -17,7 +19,8 @@ import { UsuarioAdicionarEditarComponent } from './usuarioadicionareditar/usuari
     NavMenuComponent,
     HomeComponent,
     UsuarioComponent,
-    UsuarioAdicionarEditarComponent
+    UsuarioAdicionarEditarComponent,
+    UploadComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -29,10 +32,11 @@ import { UsuarioAdicionarEditarComponent } from './usuarioadicionareditar/usuari
       { path: 'usuario', component: UsuarioComponent },
       { path: 'usuario/adicionar', component: UsuarioAdicionarEditarComponent },
       { path: 'usuario/editar/:id', component: UsuarioAdicionarEditarComponent },
-      { path: 'usuario/excluir/:id', component: UsuarioComponent },  
+      { path: 'usuario/excluir/:id', component: UsuarioComponent },
+      { path: 'upload', component: UploadComponent },
     ])
   ],
-  providers: [UsuarioService],
+  providers: [UsuarioService, UploadService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -13,6 +13,8 @@ namespace Testetoo.Infra.Data.Context
     {
         public DbSet<Usuario> Usuarios { get; set; }
 
+        public DbSet<Arquivo> Arquivos { get; set; }
+
         public TestetooContext()
         {
 
@@ -25,6 +27,7 @@ namespace Testetoo.Infra.Data.Context
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.ApplyConfiguration(new UsuarioConfig());
+            modelBuilder.ApplyConfiguration(new ArquivoConfig());
 
             base.OnModelCreating(modelBuilder);
         }
