@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ArquivoService } from '../services/arquivo.service';
 import { HttpEventType, HttpResponse } from '@angular/common/http';
-import { OperationResultVo } from '../models/usuario.model';
+import { OperationResultVo } from '../models/base';
 
 @Component({
   selector: 'app-upload',
@@ -35,7 +35,7 @@ export class UploadComponent implements OnInit {
           this.progress = Math.round(100 * event.loaded / event.total);
         }
         else if (event.type === HttpEventType.Response) {
-          var result = event as HttpResponse<OperationResultVo>;
+          var result = event as HttpResponse<OperationResultVo<string>>;
           if (result.body.success === false) {
             this.message = result.body.message;
           }
