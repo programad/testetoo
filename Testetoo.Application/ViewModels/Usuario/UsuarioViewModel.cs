@@ -1,5 +1,6 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
+using Testetoo.Application.Attributes;
 
 namespace Testetoo.Application.ViewModels.Usuario
 {
@@ -25,6 +26,7 @@ namespace Testetoo.Application.ViewModels.Usuario
         public string Senha { get; set; }
 
         [Required] // TODO validar data não pode ser futuro
+        [FutureDate(ErrorMessage = "A data não pode ser uma data futura")]
         public DateTime DataNascimento { get; set; }
     }
 }

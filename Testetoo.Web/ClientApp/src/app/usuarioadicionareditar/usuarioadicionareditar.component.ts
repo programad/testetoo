@@ -21,7 +21,7 @@ export class UsuarioAdicionarEditarComponent implements OnInit {
       id: '00000000-0000-0000-0000-000000000000',
       nome: ['', [Validators.required]],
       userName: ['', [Validators.required]],
-      senha: ['', [Validators.required, Validators.pattern('^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{5,}$')]],
+      senha: ['', [Validators.required, Validators.minLength(5), Validators.pattern('[a-z]+[0-9]+')]],
       dataNascimento: ['', [Validators.required]]
     })  
   }

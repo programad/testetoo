@@ -36,7 +36,10 @@
         Senha é obrigatória
       </span>
       <span class="text-danger" *ngIf="usuarioForm.hasError('pattern', 'senha') && formDir.submitted">
-        A senha deve conter ao menos 5 dígitos e ao menos um número e uma letra
+        A senha deve conter ao menos um número e uma letra
+      </span>
+      <span class="text-danger" *ngIf="usuarioForm.hasError('minLength', 'senha') && formDir.submitted">
+        A senha deve conter ao menos 5 dígitos
       </span>
     </div>
     <div class="form-group row">
