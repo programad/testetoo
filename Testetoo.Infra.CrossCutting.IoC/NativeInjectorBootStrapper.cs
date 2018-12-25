@@ -1,6 +1,4 @@
-﻿
-using Microsoft.AspNetCore.Http;
-using Microsoft.Extensions.DependencyInjection;
+﻿using Microsoft.Extensions.DependencyInjection;
 using Testetoo.Application.Interfaces;
 using Testetoo.Application.Services;
 using Testetoo.Domain.Interfaces;
