@@ -8,7 +8,7 @@
     <div class="col-md-4">
       <input class="form-control" type="text" formControlName="nome">
     </div>
-    <span class="text-danger" *ngIf="usuarioForm.hasError('required', 'nome') && formDir.submitted">
+    <span class="text-danger" *ngIf="usuarioForm.hasError('required', ['nome']) && formDir.submitted">
       Nome é obrigatório
     </span>
   </div>
@@ -17,7 +17,7 @@
     <div class="col-md-4">
       <input class="form-control" type="text" formControlName="userName">
     </div>
-    <span class="text-danger" *ngIf="usuarioForm.hasError('required', 'userName') && formDir.submitted">
+    <span class="text-danger" *ngIf="usuarioForm.hasError('required', ['userName']) && formDir.submitted">
       UserName é obrigatório
     </span>
   </div>
@@ -26,10 +26,10 @@
     <div class="col-md-4">
       <input class="form-control" type="text" formControlName="senha">
     </div>
-    <span class="text-danger" *ngIf="usuarioForm.hasError('required', 'senha') && formDir.submitted">
+    <span class="text-danger" *ngIf="usuarioForm.hasError('required', ['senha']) && formDir.submitted">
       Senha é obrigatória
     </span>
-    <span class="text-danger" *ngIf="usuarioForm.hasError('pattern', 'senha') && formDir.submitted">
+    <span class="text-danger" *ngIf="usuarioForm.hasError('pattern', ['senha']) && formDir.submitted">
       A senha deve ter no mínimo 5 dígitos e conter ao menos um número e uma letra
     </span>
   </div>
@@ -38,7 +38,7 @@
     <div class="col-md-4">
       <input class="form-control" type="date" formControlName="dataNascimento">
     </div>
-    <span class="text-danger" *ngIf="usuarioForm.hasError('required', 'dataNascimento') && formDir.submitted">
+    <span class="text-danger" *ngIf="usuarioForm.hasError('required', ['dataNascimento']) && formDir.submitted">
       Data de Nascimento é obrigatória
     </span>
   </div>
