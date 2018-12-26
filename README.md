@@ -1,4 +1,4 @@
-[![Build Status](https://programad.visualstudio.com/testetoo/_apis/build/status/programad.testetoo?branchName=master)](https://programad.visualstudio.com/testetoo/_build/latest?definitionId=19?branchName=master)
+[![Build Status](https://programad.visualstudio.com/testetoo/_apis/build/status/Testetoo-CI?branchName=master)](https://programad.visualstudio.com/testetoo/_build/latest?definitionId=20?branchName=master)
 
 [Live Demo](https://testetoo.azurewebsites.net)
 
