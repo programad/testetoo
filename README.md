@@ -1,5 +1,9 @@
 [![Build Status](https://programad.visualstudio.com/testetoo/_apis/build/status/programad.testetoo?branchName=master)](https://programad.visualstudio.com/testetoo/_build/latest?definitionId=19?branchName=master)
 
+[Live Demo](https://testetoo.azurewebsites.net)
+
+[Live API](https://testetooapi.azurewebsites.net/api/usuario)
+
 # Teste Too Seguros
 
 Olá, esse é o teste para desenvolvedor da Too Seguros, nosso intuito é verificar seus conhecimentos quanto à algumas tecnologias que já utilizamos, sua desenvoltura com dotnet e estruturação de código. Nosso intuito não é analisar a estética, mas sim como você estrutura a solução.
