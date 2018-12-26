@@ -24,7 +24,14 @@ export class UploadComponent implements OnInit {
   }
 
   onFileChanged(event) {
-    this.arquivoSelecionado = event.target.files[0]
+    var type = event.target.files[0].type;
+
+    if (type === 'image/jpeg' || type === 'image/png') {
+      this.arquivoSelecionado = event.target.files[0];
+    }
+    else {
+      swal("Arquivo inválido!", "Selecione apenas imagens JPEG ou PNG", 'error');
+    }
   }
 
   onUpload() {
