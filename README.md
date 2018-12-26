@@ -1,4 +1,14 @@
-[![Build Status](https://programad.visualstudio.com/testetoo/_apis/build/status/programad.testetoo?branchName=master)](https://programad.visualstudio.com/testetoo/_build/latest?definitionId=19?branchName=master)
+[![Build Status](https://programad.visualstudio.com/testetoo/_apis/build/status/Testetoo-CI?branchName=master)](https://programad.visualstudio.com/testetoo/_build/latest?definitionId=20?branchName=master)
+[![Deploy Status Web](https://programad.vsrm.visualstudio.com/_apis/public/Release/badge/34ab9731-e58b-4bff-87fa-5a929492170a/1/1)](programad.visualstudio.com/testetoo/_release?definitionId=1)
+[![Deploy Status API](https://programad.vsrm.visualstudio.com/_apis/public/Release/badge/34ab9731-e58b-4bff-87fa-5a929492170a/1/2)](programad.visualstudio.com/testetoo/_release?definitionId=1)
+
+
+
+
+
+[Live Demo](https://testetoo.azurewebsites.net)
+
+[Live API](https://testetooapi.azurewebsites.net/api/usuario)
 
 # Teste Too Seguros
 
