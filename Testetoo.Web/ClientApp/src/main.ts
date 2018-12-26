@@ -7,13 +7,18 @@ import { environment } from './environments/environment';
 export function getBaseUrl() {
   return document.getElementsByTagName('base')[0].href;
 }
-export function getapiUrl() {
-  return document.getElementsByTagName('base')[0].dataset.apiUrl;
+
+export function getApiUrl() {
+  if (environment.production) {
+    return "https://testetooapi.azurewebsites.net/";
+  } else {
+    return "https://localhost:44309/";
+  }
 }
 
 const providers = [
   { provide: 'BASE_URL', useFactory: getBaseUrl, deps: [] },
-  { provide: 'API_URL', useFactory: getapiUrl, deps: [] }
+  { provide: 'API_URL', useFactory: getApiUrl, deps: [] }
 ];
 
 if (environment.production) {
@@ -22,3 +27,4 @@ if (environment.production) {
 
 platformBrowserDynamic(providers).bootstrapModule(AppModule)
   .catch(err => console.log(err));
+
