@@ -27,7 +27,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Testetoo.Infra.Data", "Test
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Testetoo.Infra.CrossCutting.IoC", "Testetoo.Infra.CrossCutting.IoC\Testetoo.Infra.CrossCutting.IoC.csproj", "{51DD2D8F-2CDA-450D-A6E6-6C56080B6C38}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Testetoo.Web", "Testetoo.Web\Testetoo.Web.csproj", "{3905CFE9-3B9F-4270-8255-9763A1E6436C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Testetoo.Web", "Testetoo.Web\Testetoo.Web.csproj", "{3905CFE9-3B9F-4270-8255-9763A1E6436C}"
+	ProjectSection(ProjectDependencies) = postProject
+		{04453764-EB07-468A-8E01-7911239FE8C0} = {04453764-EB07-468A-8E01-7911239FE8C0}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

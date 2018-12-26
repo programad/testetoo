@@ -6,6 +6,7 @@ import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/observable/throw';
+import swal from 'sweetalert2';
 
 
 @Injectable()
@@ -51,7 +52,7 @@ export class UsuarioService {
       }
     }
 
-    alert(erros); // TODO trocar pelo SweetAlert2
+    swal("Erro!", erros, 'error');
 
     return Observable.throw(response);
   }

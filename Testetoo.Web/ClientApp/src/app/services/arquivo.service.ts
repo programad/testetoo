@@ -4,6 +4,7 @@ import { ResponseContentType, ResponseType } from '@angular/http';
 import { Observable } from 'rxjs';
 import { ArquivoListItemViewModel, ArquivoViewModel } from '../models/arquivo.model';
 import { OperationResultVo } from '../models/base';
+import swal from 'sweetalert2';
 
 @Injectable({
   providedIn: 'root'
@@ -48,7 +49,7 @@ export class ArquivoService {
       }
     }
 
-    alert(erros); // TODO trocar pelo SweetAlert2
+    swal("Erro!", erros, 'error');
 
     return Observable.throw(response);
   }
