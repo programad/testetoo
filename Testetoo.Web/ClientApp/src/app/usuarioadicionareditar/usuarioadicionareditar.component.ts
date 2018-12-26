@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NgForm, FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';  
 import { UsuarioService } from '../services/usuario.service';
+import swal from 'sweetalert2';
 
 @Component({
   selector: 'app-usuarioadicionareditar',
@@ -43,12 +44,14 @@ export class UsuarioAdicionarEditarComponent implements OnInit {
     if (this.titulo == "Criar") {
       this._usuarioService.add(this.usuarioForm.value)
         .subscribe((data) => {
+          swal("Sucesso!", "Usuário criado com sucesso!", 'success');
           this._router.navigate(['/usuario']);
         }, error => this.errorMessage = error)
     }
     else if (this.titulo == "Editar") {
       this._usuarioService.update(this.usuarioForm.value)
         .subscribe((data) => {
+          swal("Sucesso!", "Usuário salvo com sucesso!", 'success');
           this._router.navigate(['/usuario']);
         }, error => this.errorMessage = error)
     }

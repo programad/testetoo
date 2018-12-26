@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { UsuarioService } from '../services/usuario.service';
 import { UsuarioViewModel } from '../models/usuario.model';
+import swal from 'sweetalert2';
 
 @Component({
   selector: 'app-usuario',
@@ -20,11 +21,14 @@ export class UsuarioComponent {
   }
 
   excluir(id) {
-    var sim = confirm("Você quer mesmo excluir esse usuário?");
-    if (sim) {
-      this._usuarioService.remove(id).subscribe((data) => {
-        this.getUsuarios();
-      }, error => console.error(error))
-    }
-  }  
+    swal("Tem certeza?", "Você quer mesmo excluir esse usuário?", 'question')
+      .then((resposta) => {
+        if (resposta.value) {
+          this._usuarioService.remove(id).subscribe((data) => {
+            swal("Sucesso!", "Usuário excluído com sucesso!", 'success');
+            this.getUsuarios();
+          }, error => console.error(error))
+        }
+      })
+  }
 }

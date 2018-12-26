@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ArquivoService } from '../services/arquivo.service';
 import { HttpEventType, HttpResponse } from '@angular/common/http';
 import { OperationResultVo } from '../models/base';
+import { Router } from '@angular/router';
+import swal from 'sweetalert2';
 
 @Component({
   selector: 'app-upload',
@@ -15,7 +17,7 @@ export class UploadComponent implements OnInit {
   public message: string;
 
 
-  constructor(private _arquivoService: ArquivoService) {
+  constructor(private _arquivoService: ArquivoService, private _router: Router) {
   }
 
   ngOnInit() {
@@ -41,6 +43,8 @@ export class UploadComponent implements OnInit {
           }
           else {
             this.message = "Arquivo enviado com sucesso!";
+            swal("Sucesso!", this.message, 'success');
+            this._router.navigate(['/arquivo']);
           }
         }
       }
