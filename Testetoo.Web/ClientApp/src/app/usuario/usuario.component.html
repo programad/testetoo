@@ -4,29 +4,31 @@
 
 <p *ngIf="!usuarios"><em>Loading...</em></p>
 
-<div>
-  <a [routerLink]="['/usuario/adicionar']" class="btn btn-default">Criar Usuario</a>
+<div class="form-group">
+    <a [routerLink]="['/usuario/adicionar']" class="btn btn-default"><i class="glyphicon glyphicon-plus"></i> Criar Usuario</a>
 </div>
-<table class='table' *ngIf="usuarios">
-  <thead>
-    <tr>
-      <th>Nome</th>
-      <th>UserName</th>
-      <th>Senha</th>
-      <th>DataNascimento</th>
-      <th>&nbsp;</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let usuario of usuarios">
-      <td>{{ usuario.nome }}</td>
-      <td>{{ usuario.userName }}</td>
-      <td>{{ usuario.senha }}</td>
-      <td>{{ usuario.dataNascimento | date: 'dd/MM/yyyy'}}</td>
-      <td>
-        <a [routerLink]="['/usuario/editar/', usuario.id]" class="btn btn-default">Editar</a>
-        <a [routerLink]="" (click)="excluir(usuario.id)" class="btn btn-default">Excluir</a>
-      </td>
-    </tr>
-  </tbody>
-</table>
+<div class="table-responsive">
+  <table class='table' *ngIf="usuarios">
+    <thead>
+      <tr>
+        <th>Nome</th>
+        <th>UserName</th>
+        <th>Senha</th>
+        <th>DataNascimento</th>
+        <th>&nbsp;</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let usuario of usuarios">
+        <td>{{ usuario.nome }}</td>
+        <td>{{ usuario.userName }}</td>
+        <td>{{ usuario.senha }}</td>
+        <td>{{ usuario.dataNascimento | date: 'dd/MM/yyyy'}}</td>
+        <td>
+          <a [routerLink]="['/usuario/editar/', usuario.id]" class="btn btn-default"><i class="glyphicon glyphicon-pencil"></i></a>
+          <a [routerLink]="" (click)="excluir(usuario.id)" class="btn btn-default"><i class="glyphicon glyphicon-trash"></i></a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

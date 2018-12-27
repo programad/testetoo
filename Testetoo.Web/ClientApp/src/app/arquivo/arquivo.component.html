@@ -4,22 +4,24 @@
 
 <p *ngIf="!arquivos"><em>Loading...</em></p>
 
-<div>
-  <a [routerLink]="['/arquivo/upload']" class="btn btn-default">Enviar arquivo</a>
+<div class="form-group">
+  <a [routerLink]="['/arquivo/upload']" class="btn btn-default"><i class="glyphicon glyphicon-upload"></i> Enviar arquivo</a>
 </div>
-<table class='table' *ngIf="arquivos">
-  <thead>
-    <tr>
-      <th>Nome</th>
-      <th>&nbsp;</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let arquivo of arquivos">
-      <td>{{ arquivo.nome }}</td>
-      <td>
-        <a (click)="downloaFile(arquivo.id, arquivo.nome)" class="btn btn-default">Baixar</a>
-      </td>
-    </tr>
-  </tbody>
-</table>
+<div class="table-responsive">
+  <table class='table' *ngIf="arquivos">
+    <thead>
+      <tr>
+        <th>Nome</th>
+        <th>&nbsp;</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let arquivo of arquivos">
+        <td>{{ arquivo.nome }}</td>
+        <td>
+          <a (click)="downloaFile(arquivo.id, arquivo.nome)" class="btn btn-default"><i class="glyphicon glyphicon-download"></i></a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
